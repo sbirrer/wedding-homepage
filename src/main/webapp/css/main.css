@@ -1,0 +1,83 @@
+body {
+	display: grid; 
+	max-width: 99em;
+	grid-template-columns: 800px;
+	grid-template-rows: 100px auto 1fr 50px;
+	grid-areas: 
+		"header"
+		"nav"
+		"main"
+		"footer";
+	background-color: #45546b;
+	margin-top: 0px;
+	justify-content: center;
+}
+
+header {
+	grid-area: "header";
+	background-image: url("../img/dots.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+main {
+	background-color: rgba(255,255,255,0.75);
+	grid-area: "main";
+	padding: 2em;
+	border-radius: 1em;
+}
+
+main h1 {
+	font-family: Revista-Regular-custom;
+}
+
+nav {
+/*	background-color: rgba(255,255,255,0.75); */
+	grid-area: "nav";
+	padding: 0;
+	margin: 0;	
+	display: grid;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	list-style-type: none;
+	margin: 0 1em 1px 1em;
+	padding: 0;
+}
+
+@media screen and (min-width: 45em) {
+	nav ul {
+		flex-direction: row; 
+	}
+}
+
+nav li {
+	flex: 1 1 0%;
+	padding: 0 1px 0 0;
+}
+
+nav a {
+	background-color: rgba(255,255,255,0.75);
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.5em 0;
+	margin: 0;
+	border-radius: 0.5em 0.5em 0 0;
+	width: 100%;
+}
+
+footer {
+	grid-area: "footer";
+}
+
+*, ::before, ::after {
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'Revista-Regular-custom';
+	src: url("../font/Revista-Regular.ttf") format('truetype')
+}
