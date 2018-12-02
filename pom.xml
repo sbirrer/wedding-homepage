@@ -156,6 +156,10 @@
 							<name>activeweb.log.request</name>
 							<value>true</value>
 						</systemProperty>
+						<systemProperty>
+							<name>active_env</name>
+							<value>${environments}</value>
+						</systemProperty>
 					</systemProperties>
 				</configuration>
 			</plugin>

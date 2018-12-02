@@ -1,3 +1,7 @@
+/*****************************************************************************/
+/* Page Layout                                                               */
+/*****************************************************************************/ 
+
 body {
 	display: grid; 
 	max-width: 99em;
@@ -21,7 +25,7 @@ header {
 }
 
 main {
-	background-color: rgba(255,255,255,0.75);
+	background-color: #d0d4da;
 	grid-area: "main";
 	padding: 2em;
 	border-radius: 1em;
@@ -32,7 +36,6 @@ main h1 {
 }
 
 nav {
-/*	background-color: rgba(255,255,255,0.75); */
 	grid-area: "nav";
 	padding: 0;
 	margin: 0;	
@@ -60,7 +63,7 @@ nav li {
 }
 
 nav a {
-	background-color: rgba(255,255,255,0.75);
+	background-color: #d0d4da;
 	text-decoration: none;
 	display: inline-block;
 	padding: 0.5em 0;
@@ -72,6 +75,53 @@ nav a {
 footer {
 	grid-area: "footer";
 }
+
+/*****************************************************************************/
+/* Forms                                                                     */
+/*****************************************************************************/
+
+.labeled-input {
+	position: relative;
+	margin: 1em 0 1em 0;
+}
+
+fieldset {
+	border-color: #45546b;
+	border-radius: 0.5em;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.labeled-input label {
+	background-color: #d0d4da;
+	position: absolute;
+	padding: 0 0.5em;
+	font-size: 0.8em;
+	top: -0.6em;
+	left: 0.5em;
+}
+
+.labeled-input input, .labeled-input textarea {
+	background-color: #d0d4da;
+	border-color: #45546b;
+	border-radius: 0.2em;
+	border-width: 1px;
+	border-style: solid;
+	padding: 0.5em;
+	width: 100%;
+}
+
+button {
+	padding: 1em;
+	background: #45546b;
+	color: #d0d4da;
+	border-style: none;
+	border-radius: 0.5em;
+}
+
+/*****************************************************************************/
+/* Misc                                                                      */
+/*****************************************************************************/
 
 *, ::before, ::after {
 	box-sizing: border-box;
