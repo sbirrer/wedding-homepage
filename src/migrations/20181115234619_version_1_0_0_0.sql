@@ -18,3 +18,11 @@ CREATE OR REPLACE table persons (
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
+
+CREATE OR REPLACE TABLE deregistrations (
+	ID INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(100) NOT NULL,
+	INDEX `IDX_ID` (`ID`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;

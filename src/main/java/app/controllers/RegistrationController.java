@@ -7,6 +7,7 @@ import java.util.List;
 import org.javalite.activeweb.AppController;
 import org.javalite.activeweb.annotations.POST;
 
+import app.models.Deregistration;
 import app.models.Person;
 import app.models.Registration;
 
@@ -18,7 +19,13 @@ public class RegistrationController extends AppController {
 	protected static final String PARAM_PHONE = "phone";
 	protected static final String PARAM_REMARKS = "remarks";
 	
+	protected static final String PARAM_NAME = "name";
+	
 	public void index() {}
+	
+	public void registrationForm() {}
+	
+	public void deregistrationForm() {}
 	
 	private int getSingleIntParam(String paramName) {
 		String valueStr = getSingleStringParam(paramName);
@@ -60,7 +67,7 @@ public class RegistrationController extends AppController {
 	}
 	
 	@POST
-	public void submit() {
+	public void submitRegistration() {
 		int personCount = getSingleIntParam(PARAM_PERSON_COUNT);
 		
 		List<Person> personList = new ArrayList<Person>();
@@ -97,5 +104,15 @@ public class RegistrationController extends AppController {
 			r.add(p);
 		}
 	}
-
+	
+	@POST
+	public void submitDeregistration() {
+		String name = getSingleStringParam(PARAM_NAME, Deregistration.LEN_NAME); 
+		
+		Deregistration d = new Deregistration();
+		
+		d.setName(name);
+		
+		d.saveIt();
+	}
 }

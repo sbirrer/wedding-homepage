@@ -116,9 +116,25 @@ button {
 	background: #45546b;
 	color: #d0d4da;
 	border-style: none;
-	border-radius: 0.5em;
+	border-radius: 0.5em;	
 }
 
+/*****************************************************************************/
+/* Buttons                                                                   */
+/*****************************************************************************/
+.link-button {
+	background: #45546b;
+	color: #d0d4da;
+	border-style: none;
+	border-radius: 0.5em;
+	padding: 1em;
+	margin: 1em;
+	text-align: center;
+}
+
+.link-button a:link, .link-button a:visited {
+	color: #d0d4da;	
+}
 /*****************************************************************************/
 /* Misc                                                                      */
 /*****************************************************************************/
