@@ -21,10 +21,16 @@ public class Person extends Model {
 	}
 	
 	public void setFirstName(String firstName) {
+		if (firstName.length() > LEN_FIRST_NAME) {
+			throw new IllegalArgumentException("Value '" + firstName + "' for field firstName exceeds maximum length " + LEN_FIRST_NAME);
+		}
 		setString(COL_FIRST_NAME, firstName);
 	}
 	
 	public void setLastName(String lastName) {
+		if (lastName.length() > LEN_LAST_NAME) {
+			throw new IllegalArgumentException("Value '" + lastName + "' for field lastName exceeds maximum length "  + LEN_LAST_NAME);
+		}
 		setString(COL_LAST_NAME, lastName);
 	}
 }
