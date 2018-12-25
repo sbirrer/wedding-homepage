@@ -3,7 +3,6 @@ package app.models;
 import java.util.List;
 
 import org.javalite.activejdbc.Model;
-import org.javalite.activejdbc.annotations.Table;
 
 public class Registration extends Model {
 	public static final String COL_EMAIL = "email";
