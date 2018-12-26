@@ -26,3 +26,14 @@ CREATE OR REPLACE TABLE deregistrations (
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
+
+CREATE OR REPLACE TABLE wishes (
+	ID INT NOT NULL AUTO_INCREMENT, 
+	title VARCHAR(100) NOT NULL, 
+	description VARCHAR(1000) NOT NULL, 
+	image BLOB, 
+	image_mimetype VARCHAR(100), 
+	INDEX `IDX_ID` (`ID`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;

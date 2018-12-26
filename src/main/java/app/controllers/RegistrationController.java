@@ -1,17 +1,15 @@
 package app.controllers;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.javalite.activeweb.AppController;
 import org.javalite.activeweb.annotations.POST;
 
 import app.models.Deregistration;
 import app.models.Person;
 import app.models.Registration;
 
-public class RegistrationController extends AppController {
+public class RegistrationController extends ExtendedController {
 	protected static final String PARAM_PERSON_COUNT = "person_count";
 	protected static final String PARAM_FIRST_NAME = "first_name_";
 	protected static final String PARAM_LAST_NAME = "last_name_";
@@ -26,45 +24,6 @@ public class RegistrationController extends AppController {
 	public void registrationForm() {}
 	
 	public void deregistrationForm() {}
-	
-	private int getSingleIntParam(String paramName) {
-		String valueStr = getSingleStringParam(paramName);
-		
-		int value;
-		try {
-			value = Integer.parseInt(valueStr);
-		}
-		catch (NumberFormatException nfe) {
-			String msg = "Value '" + valueStr + "' for parameter '" + paramName + "' could not be converted to an integer";
-			logError(msg, nfe);
-			throw new IllegalArgumentException(msg, nfe);
-		}
-		
-		return value;
-	}
-	
-	private String getSingleStringParam(String paramName) {
-		List<String> valuesList = params(paramName);
-		if(valuesList.size() != 1) {
-			String msg = "Received " + valuesList.size() + " values for parameter '" + paramName + "', but 1 was expected.";
-			logError(msg);
-			throw new InvalidParameterException(msg);
-		}
-		
-		return valuesList.get(0);
-	}
-	
-	private String getSingleStringParam(String paramName, int maxLength) {
-		String value = getSingleStringParam(paramName);
-		
-		if (value.length() > maxLength) {
-			String msg = "Value '" + value + "' for parameter '" + paramName + "' exceeds maximum length " + maxLength;
-			logError(msg);
-			throw new InvalidParameterException(msg);
-		}
-		
-		return value;
-	}
 	
 	@POST
 	public void submitRegistration() {

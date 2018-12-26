@@ -8,11 +8,13 @@ import org.javalite.activeweb.controller_filters.RequestParamsLogFilter;
 import org.javalite.activeweb.controller_filters.RequestPropertiesLogFilter;
 
 import app.controllers.RegistrationController;
+import app.controllers.WishController;
 
 public class AppControllerConfig extends AbstractControllerConfig {
 
 	public void init(AppContext appContext) {
 		add(new DBConnectionFilter()).to(RegistrationController.class);
+		add(new DBConnectionFilter()).to(WishController.class);
 		add(new RequestPropertiesLogFilter());
 		add(new RequestParamsLogFilter());
 		add(new HeadersLogFilter());
